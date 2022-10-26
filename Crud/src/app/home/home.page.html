@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Crud 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="ion-align-self-start">
+
+    </ion-col>
+    <ion-col class="ion-align-self-center">
+        <ion-item>
+          <ion-select [(ngModel)]="Sel" placeholder="Seleccione Usuario" (ionChange)="obtenerSeleccion($event)" width="200px;">
+            <ion-select-option *ngFor="let usuario of listadoUsuarios" [value]="usuario">{{usuario.nombre}}  
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+    </ion-col>
+
+    <ion-col class="ion-align-self-end">
+
+    </ion-col>
+
+  </ion-row>
+
+  <br>
+  <ion-card>
+    <ion-row>
+     <ion-col class="ion-align-self-center">
+
+       <ion-item>
+         <ion-label position="floating">Nombre:</ion-label>
+         <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+       </ion-item>
+     </ion-col>
+
+      <ion-col class="ion-align-self-center">
+        <ion-item>
+          <ion-label position="floating">Pass:</ion-label>
+          <ion-input [(ngModel)]="pass" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-align-self-center">
+ 
+        <ion-item>
+          <ion-label position="floating">E-mail:</ion-label>
+          <ion-input [(ngModel)]="email" type="text"></ion-input>                    
+        </ion-item>
+      </ion-col>
+ 
+       <ion-col class="ion-align-self-center">
+         <ion-item>
+           <ion-label position="floating">Estado:</ion-label>
+           <ion-input [(ngModel)]="estado" type="text"></ion-input>
+         </ion-item>
+       </ion-col> 
+    </ion-row>
+
+    <ion-row>    
+      <ion-col class="ion-align-self-center">
+        <ion-button (click)="GuardarDatos()" color="primary" shape="round">Guardar Datos</ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>    
+      <ion-col class="ion-align-self-center">
+        <ion-button (click)="editarUsuario()" color="primary" shape="round">Editar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>    
+      <ion-col class="ion-align-self-center">
+        <ion-button (click)="deleteUsuario()" color="primary" shape="round">Eliminar</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
+  
+</ion-content>
