@@ -51,7 +51,8 @@
  
         <ion-item>
           <ion-label position="floating">E-mail:</ion-label>
-          <ion-input [(ngModel)]="email" type="text"></ion-input>                    
+          <ion-input [(ngModel)]="email" type="text" 
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></ion-input>                    
         </ion-item>
       </ion-col>
  
